@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ชลศักดิ์ ทำนา | ผลงานสหกิจศึกษา</title>
+<meta name="description" content="ผลงานและภาพการปฏิบัติงานสหกิจศึกษา แผนก IT บริษัท Nittan (Thailand) Co., Ltd. ของนายชลศักดิ์ ทำนา">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b2a5b; --navy-2:#13386f; --ink:#14213d; --muted:#5b6478;
+    --red:#d7263d; --line:#e3e7ef; --bg:#f6f8fb; --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"IBM Plex Sans Thai",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+  a{color:var(--navy)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  header.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;position:relative;overflow:hidden}
+  header.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:2px solid rgba(255,255,255,.08);box-shadow:0 0 0 60px rgba(255,255,255,.03),0 0 0 120px rgba(255,255,255,.02)}
+  .hero .wrap{padding-top:64px;padding-bottom:56px;position:relative;z-index:1}
+  .eyebrow{display:inline-block;font-size:.85rem;font-weight:600;letter-spacing:.04em;padding:4px 12px;border-radius:999px;background:var(--red);color:#fff}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.2;margin:16px 0 6px;font-weight:700}
+  .hero p.lead{font-size:1.1rem;margin:0;color:#d6e0f2}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px}
+  .fact{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 16px}
+  .fact b{display:block;font-size:.8rem;font-weight:500;color:#aebfdc}
+  .fact span{font-weight:600}
+
+  nav.tabs{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+  nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto}
+  nav.tabs a{padding:14px 14px;text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap;border-bottom:3px solid transparent}
+  nav.tabs a:hover{color:var(--navy);border-bottom-color:var(--red)}
+
+  section{padding:56px 0}
+  h2{font-size:1.6rem;margin:0 0 6px;color:var(--navy)}
+  h2 + .sub{color:var(--muted);margin:0 0 28px}
+  .bar{width:48px;height:4px;background:var(--red);border-radius:2px;margin-bottom:14px}
+
+  .tasks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .task{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .task .num{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--navy);color:#fff;font-weight:700;margin-bottom:10px}
+  .task h3{margin:0 0 4px;font-size:1.05rem}
+  .task p{margin:0;color:var(--muted);font-size:.95rem}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .shot{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in}
+  .shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .3s}
+  .shot:hover img{transform:scale(1.03)}
+  .shot figcaption{padding:12px 16px}
+  .shot figcaption b{display:block}
+  .shot figcaption small{color:var(--muted)}
+
+  .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 16px}
+  .card dt{color:var(--muted)}
+  .card dd{margin:0;font-weight:500;word-break:break-word}
+
+  footer{background:var(--navy);color:#c9d5ea;text-align:center;padding:28px 20px;font-size:.9rem}
+
+  .lightbox{position:fixed;inset:0;background:rgba(5,14,32,.92);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:100%;max-height:85vh;border-radius:8px}
+  .lightbox p{color:#fff;text-align:center;margin:12px 0 0}
+  .lightbox button{position:absolute;top:16px;right:16px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">รายงานผลการปฏิบัติงานสหกิจศึกษา</span>
+    <h1>นายชลศักดิ์ ทำนา</h1>
+    <p class="lead">นักศึกษาสหกิจศึกษา แผนก IT · Nittan (Thailand) Co., Ltd.</p>
+    <div class="facts">
+      <div class="fact"><b>รหัสนักศึกษา</b><span>66543206073-9</span></div>
+      <div class="fact"><b>สาขา</b><span>วิศวกรรมคอมพิวเตอร์</span></div>
+      <div class="fact"><b>มหาวิทยาลัย</b><span>มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา เชียงใหม่</span></div>
+      <div class="fact"><b>ระยะเวลาฝึก</b><span>2 พ.ย. 2569 – 26 ก.พ. 2570</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <a href="#work">งานที่ได้รับมอบหมาย</a>
+    <a href="#gallery">ภาพการปฏิบัติงาน</a>
+    <a href="#company">สถานประกอบการ</a>
+    <a href="#contact">ติดต่อ</a>
+  </div>
+</nav>
+
+<main>
+  <section id="work">
+    <div class="wrap">
+      <div class="bar"></div>
+      <h2>งานที่ได้รับมอบหมาย</h2>
+      <p class="sub">ลักษณะงานหลักระหว่างฝึกปฏิบัติงานที่แผนก IT</p>
+      <div class="tasks">
+        <div class="task"><span class="num">01</span><h3>ติดตั้งและดูแลจอแสดงผล</h3><p>ติดตั้ง ปรับตั้ง และดูแลจอแสดงผลที่ใช้งานในไลน์ผลิต</p></div>
+        <div class="task"><span class="num">02</span><h3>ติดตั้ง/ย้ายคอมพิวเตอร์</h3><p>ติดตั้งและย้ายเครื่องคอมพิวเตอร์และอุปกรณ์ต่อพ่วงให้ผู้ใช้งาน</p></div>
+        <div class="task"><span class="num">03</span><h3>ซ่อมบำรุงฮาร์ดแวร์</h3><p>ตรวจเช็กและเปลี่ยนชิ้นส่วนฮาร์ดแวร์ เช่น การ์ดจอ</p></div>
+        <div class="task"><span class="num">04</span><h3>สนับสนุนผู้ใช้งาน</h3><p>ให้บริการ IT Support แก้ปัญหาการใช้งานให้พนักงาน</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="bar"></div>
+      <h2>ภาพการปฏิบัติงาน</h2>
+      <p class="sub">กดที่รูปเพื่อดูภาพขนาดใหญ่</p>
+      <div class="gallery" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <section id="company">
+    <div class="wrap">
+      <div class="bar"></div>
+      <h2>สถานประกอบการ</h2>
+      <p class="sub">ข้อมูลสถานที่ฝึกปฏิบัติงาน</p>
+      <div class="info">
+        <div class="card">
+          <dl>
+            <dt>บริษัท</dt><dd>Nittan (Thailand) Co., Ltd.</dd>
+            <dt>แผนก</dt><dd>IT</dd>
+            <dt>ระยะเวลา</dt><dd>2 พ.ย. 2569 – 26 ก.พ. 2570</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="bar"></div>
+      <h2>ติดต่อ</h2>
+      <p class="sub">ขอบคุณสำหรับการนิเทศและคำแนะนำ</p>
+      <div class="info">
+        <div class="card">
+          <dl>
+            <dt>อีเมล</dt><dd><a href="mailto:chonlasakthamna@gmail.com">chonlasakthamna@gmail.com</a></dd>
+            <dt>GitHub</dt><dd><a href="https://github.com/Chonlasak-Thamna" target="_blank" rel="noopener">github.com/Chonlasak-Thamna</a></dd>
+            <dt>โทรศัพท์</dt><dd><a href="tel:+66963099234">+66 96 309 9234</a></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2569 ชลศักดิ์ ทำนา · มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา เชียงใหม่</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button type="button" aria-label="ปิด" id="lb-close">&times;</button>
+  <div><img id="lb-img" alt=""><p id="lb-cap"></p></div>
+</div>
+
+<script>
+  // เพิ่มรูปใหม่: ใส่ไฟล์ในโฟลเดอร์ images/ แล้วเพิ่มบรรทัดในรายการนี้
+  const photos = [
+    { src: "images/work-01.jpg", title: "ติดตั้งจอแสดงผลที่ไลน์ผลิต", note: "แผนก IT · ไลน์ผลิต" },
+    { src: "images/work-02.jpg", title: "ติดตั้งเครื่องคอมพิวเตอร์", note: "แผนก IT · สำนักงาน" },
+  ];
+
+  const grid = document.getElementById("gallery-grid");
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lb-img");
+  const lbCap = document.getElementById("lb-cap");
+
+  photos.forEach(p => {
+    const fig = document.createElement("figure");
+    fig.className = "shot";
+    fig.innerHTML = `<img src="${p.src}" alt="${p.title}" loading="lazy"><figcaption><b>${p.title}</b><small>${p.note}</small></figcaption>`;
+    fig.addEventListener("click", () => {
+      lbImg.src = p.src; lbImg.alt = p.title; lbCap.textContent = p.title;
+      lb.classList.add("open");
+    });
+    grid.appendChild(fig);
+  });
+
+  const close = () => lb.classList.remove("open");
+  document.getElementById("lb-close").addEventListener("click", close);
+  lb.addEventListener("click", e => { if (e.target === lb) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+</script>
+</body>
+</html>
