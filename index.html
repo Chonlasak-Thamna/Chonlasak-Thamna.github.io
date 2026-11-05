@@ -4,189 +4,498 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ชลศักดิ์ ทำนา | ผลงานสหกิจศึกษา</title>
-<meta name="description" content="ผลงานและภาพการปฏิบัติงานสหกิจศึกษา แผนก IT บริษัท Nittan (Thailand) Co., Ltd. ของนายชลศักดิ์ ทำนา">
+<meta name="description" content="ผลงาน ภาพการปฏิบัติงาน และแผนการฝึกสหกิจศึกษา แผนก IT บริษัท Nittan (Thailand) Co., Ltd. ภาคเรียนที่ 2/2569 ของนายชลศักดิ์ ทำนา">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0b2a5b; --navy-2:#13386f; --ink:#14213d; --muted:#5b6478;
-    --red:#d7263d; --line:#e3e7ef; --bg:#f6f8fb; --card:#ffffff;
+    --navy:#0d2c66; --navy-deep:#0a2250; --navy-soft:#1b3f84;
+    --red:#d7263d; --ink:#14213d; --ink-2:#3d4a63; --muted:#6a7489;
+    --ground:#f5f7fb; --paper:#ffffff; --tint:#eaf0f9; --tint-2:#dde6f4;
+    --margin:clamp(20px,4vw,48px); --max:1200px;
+    --ease:cubic-bezier(.2,.7,.2,1);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;font-family:"IBM Plex Sans Thai",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
-  a{color:var(--navy)}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  body{margin:0;font-family:"IBM Plex Sans Thai",system-ui,sans-serif;color:var(--ink);background:var(--ground);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--margin)}
+  h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.01em}
+  h2{font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--navy);font-weight:700}
+  .bar{display:block;width:64px;height:5px;background:var(--red);margin:14px 0 0}
+  .lead{color:var(--ink-2);max-width:56ch;margin:14px 0 0}
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
 
-  header.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;position:relative;overflow:hidden}
-  header.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:2px solid rgba(255,255,255,.08);box-shadow:0 0 0 60px rgba(255,255,255,.03),0 0 0 120px rgba(255,255,255,.02)}
-  .hero .wrap{padding-top:64px;padding-bottom:56px;position:relative;z-index:1}
-  .eyebrow{display:inline-block;font-size:.85rem;font-weight:600;letter-spacing:.04em;padding:4px 12px;border-radius:999px;background:var(--red);color:#fff}
-  .hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.2;margin:16px 0 6px;font-weight:700}
-  .hero p.lead{font-size:1.1rem;margin:0;color:#d6e0f2}
-  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px}
-  .fact{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 16px}
-  .fact b{display:block;font-size:.8rem;font-weight:500;color:#aebfdc}
-  .fact span{font-weight:600}
+  /* scroll progress */
+  .progress{position:fixed;top:0;left:0;height:4px;width:100%;background:var(--red);transform-origin:0 50%;transform:scaleX(0);z-index:60}
 
-  nav.tabs{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
-  nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto}
-  nav.tabs a{padding:14px 14px;text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap;border-bottom:3px solid transparent}
-  nav.tabs a:hover{color:var(--navy);border-bottom-color:var(--red)}
+  /* top bar */
+  .top{position:sticky;top:0;z-index:50;background:var(--paper)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+  .brand{font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap}
+  .brand span{color:var(--red)}
+  .nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .nav a{padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--ink-2);font-weight:500;white-space:nowrap;transition:background .2s,color .2s}
+  .nav a:hover,.nav a.on{background:var(--tint);color:var(--navy)}
 
-  section{padding:56px 0}
-  h2{font-size:1.6rem;margin:0 0 6px;color:var(--navy)}
-  h2 + .sub{color:var(--muted);margin:0 0 28px}
-  .bar{width:48px;height:4px;background:var(--red);border-radius:2px;margin-bottom:14px}
+  /* hero */
+  .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;left:0;top:0;width:180px;height:10px;background:var(--red)}
+  .hero::after{content:"";position:absolute;right:0;bottom:0;width:38%;height:10px;background:var(--red)}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center;padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(56px,8vw,104px)}
+  .term{font-weight:600;color:#ffd5db;font-size:1.05rem}
+  .hero h1{font-size:clamp(2.6rem,6.6vw,5.4rem);font-weight:700;margin-top:10px;letter-spacing:-.025em;line-height:1.02}
+  .hero .sub{font-size:clamp(1.05rem,1.6vw,1.25rem);color:#d5def0;margin:18px 0 0;max-width:34ch}
+  .facts{margin:32px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 20px;font-size:1rem}
+  .facts dt{color:#a9b9da}
+  .facts dd{margin:0;font-weight:600}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .25s var(--ease),background .25s}
+  .btn.red{background:var(--red);color:#fff}
+  .btn.red:hover{transform:translateY(-2px);background:#c21f35}
+  .btn.ghost{background:rgba(255,255,255,.1);color:#fff}
+  .btn.ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,.18)}
+  .btn:active{transform:translateY(0) scale(.98)}
+  .hero-pic{position:relative}
+  .hero-pic .frame{overflow:hidden;border-radius:18px;aspect-ratio:4/3.4;background:var(--navy-soft)}
+  .hero-pic img{width:100%;height:115%;object-fit:cover;will-change:transform}
+  .hero-pic .tag{position:absolute;left:-14px;bottom:28px;background:var(--red);color:#fff;font-weight:600;padding:10px 16px;border-radius:10px;font-size:.95rem}
 
-  .tasks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-  .task{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .task .num{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--navy);color:#fff;font-weight:700;margin-bottom:10px}
-  .task h3{margin:0 0 4px;font-size:1.05rem}
-  .task p{margin:0;color:var(--muted);font-size:.95rem}
+  /* live progress */
+  .live{background:var(--navy-deep)}
+  .live .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding-top:26px;padding-bottom:26px;color:#fff}
+  .live .big{font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+  .live .big small{font-size:1rem;font-weight:500;color:#a9b9da;margin-left:6px}
+  .track{height:14px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;position:relative}
+  .track i{position:absolute;inset:0;background:var(--red);border-radius:999px;transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform 1.6s var(--ease)}
+  .live .note{color:#c9d5ea;font-size:.98rem;text-align:right}
+  .live .note b{color:#fff}
 
-  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-  .shot{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in}
-  .shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .3s}
-  .shot:hover img{transform:scale(1.03)}
-  .shot figcaption{padding:12px 16px}
-  .shot figcaption b{display:block}
-  .shot figcaption small{color:var(--muted)}
+  section{padding:clamp(80px,11vw,150px) 0}
+  .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,52px)}
 
-  .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 16px}
-  .card dt{color:var(--muted)}
-  .card dd{margin:0;font-weight:500;word-break:break-word}
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:1fr 1fr;gap:16px;height:clamp(420px,52vw,640px)}
+  .shot{position:relative;overflow:hidden;border-radius:16px;cursor:zoom-in;background:var(--tint);margin:0;border:0;padding:0;font:inherit;color:inherit;text-align:left}
+  .shot:first-child{grid-row:1/3}
+  .shot img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+  .shot:hover img,.shot:focus-visible img{transform:scale(1.05)}
+  .shot figcaption,.shot .cap{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(10,34,80,.82);color:#fff;padding:10px 14px;border-radius:10px;font-weight:500;font-size:.95rem;transform:translateY(8px);opacity:.92;transition:transform .4s var(--ease),opacity .4s}
+  .shot:hover .cap{transform:none;opacity:1}
 
-  footer{background:var(--navy);color:#c9d5ea;text-align:center;padding:28px 20px;font-size:.9rem}
+  /* tasks */
+  .tasks-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,80px);align-items:start}
+  .tasks-aside{position:sticky;top:110px}
+  .tasks{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:t}
+  .task{display:grid;grid-template-columns:60px 1fr;gap:18px;align-items:start;background:var(--paper);border-radius:16px;padding:22px;transition:transform .35s var(--ease),background .35s}
+  .task:hover{transform:translateX(6px);background:#fff}
+  .task .n{width:60px;height:60px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.3rem;transition:background .35s}
+  .task:hover .n{background:var(--red)}
+  .task h3{font-size:1.2rem;color:var(--navy);margin-top:4px}
+  .task p{margin:6px 0 0;color:var(--ink-2)}
+  .todo{color:var(--muted)!important;font-style:normal}
+  .todo-chip{display:inline-block;margin-top:8px;font-size:.88rem;color:var(--muted);background:var(--tint);padding:3px 10px;border-radius:999px}
 
-  .lightbox{position:fixed;inset:0;background:rgba(5,14,32,.92);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
-  .lightbox.open{display:flex}
-  .lightbox img{max-width:100%;max-height:85vh;border-radius:8px}
-  .lightbox p{color:#fff;text-align:center;margin:12px 0 0}
-  .lightbox button{position:absolute;top:16px;right:16px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
+  /* plan timeline */
+  .plan{background:var(--paper)}
+  .timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px}
+  .rail{position:absolute;left:0;right:0;top:27px;height:6px;background:var(--tint-2);border-radius:999px;overflow:hidden}
+  .rail i{position:absolute;inset:0;background:var(--navy);transform-origin:0 50%;transform:scaleX(0);transition:transform 1.8s var(--ease)}
+  .now{position:absolute;top:20px;transform:translateX(-50%);z-index:2;transition:left 1.8s var(--ease),top 1.8s var(--ease)}
+  .now .dot{width:20px;height:20px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(215,38,61,.18);animation:pulse 2.4s infinite}
+  .now span{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:8px;background:var(--red);color:#fff;font-size:.82rem;font-weight:600;padding:2px 10px;border-radius:999px;white-space:nowrap}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 6px rgba(215,38,61,.18)}50%{box-shadow:0 0 0 12px rgba(215,38,61,.06)}}
+  .month{padding:72px 18px 0 0}
+  .month .m{display:block;width:14px;height:14px;border-radius:50%;background:var(--navy);position:absolute;top:23px;transform:translateX(0)}
+  .month h3{font-size:1.25rem;color:var(--navy)}
+  .month .d{color:var(--muted);font-size:.95rem;margin:2px 0 10px}
+  .month ul{margin:0;padding-left:18px;color:var(--ink-2)}
+  .month li{margin:4px 0}
+  .month.past h3{color:var(--ink-2)}
+  .month.cur{position:relative}
+  .month.cur h3{color:var(--red)}
+
+  /* skills */
+  .skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px)}
+  .skills{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .skill{display:flex;align-items:center;gap:16px;background:var(--paper);border-radius:14px;padding:16px 18px;transition:transform .35s var(--ease)}
+  .skill:hover{transform:translateY(-3px)}
+  .skill .c{flex:none;width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700}
+  .summary{background:var(--navy);color:#e6ecf7;border-radius:20px;padding:clamp(24px,3vw,40px);position:relative;overflow:hidden}
+  .summary::after{content:"";position:absolute;right:0;top:0;width:90px;height:8px;background:var(--red)}
+  .summary h3{color:#fff;font-size:1.4rem}
+  .summary p{margin:14px 0 0}
+
+  /* company */
+  .company{background:var(--paper)}
+  .co-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:stretch}
+  .co-info dl{margin:24px 0 0;display:grid;gap:18px}
+  .co-info dt{font-weight:700;color:var(--navy)}
+  .co-info dd{margin:2px 0 0;color:var(--ink)}
+  .co-media{display:grid;grid-template-rows:auto 1fr;gap:16px}
+  .co-photo{border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--tint)}
+  .co-photo img{width:100%;height:100%;object-fit:cover}
+  .map{border:0;width:100%;height:100%;min-height:260px;border-radius:18px;background:var(--tint)}
+
+  /* contact */
+  .contact{background:var(--navy);color:#fff}
+  .contact h2{color:#fff}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .ch{display:block;background:rgba(255,255,255,.07);border-radius:16px;padding:22px;text-decoration:none;transition:transform .3s var(--ease),background .3s}
+  .ch:hover{transform:translateY(-4px);background:rgba(255,255,255,.13)}
+  .ch b{display:block;color:#a9b9da;font-weight:500;font-size:.95rem}
+  .ch span{font-weight:600;font-size:1.1rem;word-break:break-word}
+  .thanks{margin-top:48px;font-size:clamp(1.2rem,2vw,1.5rem);color:#d5def0}
+  footer{background:var(--navy-deep);color:#a9b9da;padding:28px 0;font-size:.95rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer strong{color:#fff}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;background:rgba(7,20,46,.94);display:none;align-items:center;justify-content:center;z-index:100;padding:24px}
+  .lb.open{display:flex;animation:fade .3s var(--ease)}
+  .lb figure{margin:0;max-width:min(1100px,100%);text-align:center}
+  .lb img{max-height:80vh;border-radius:12px;margin:0 auto}
+  .lb figcaption{color:#fff;margin-top:14px}
+  .lb button{position:absolute;background:rgba(255,255,255,.12);border:0;color:#fff;width:48px;height:48px;border-radius:50%;font-size:1.5rem;cursor:pointer;transition:background .2s}
+  .lb button:hover{background:var(--red)}
+  .lb .x{top:18px;right:18px}.lb .prev{left:18px;top:50%}.lb .next{right:18px;top:50%}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+
+  /* reveal */
+  .js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+  .js .rv.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .hero .wrap,.tasks-wrap,.skills-wrap,.co-grid{grid-template-columns:1fr}
+    .tasks-aside{position:static}
+    .live .wrap{grid-template-columns:1fr;gap:14px}
+    .live .note{text-align:left}
+    .timeline{grid-template-columns:1fr;padding-left:34px}
+    .rail{left:10px;right:auto;top:0;bottom:0;width:6px;height:auto}
+    .rail i{transform-origin:50% 0;transform:scaleY(0)}
+    .now{left:13px!important;transform:translate(-50%,-50%)}
+    .now span{display:none}.now .dot{margin-top:0}
+    .month{padding:0 0 30px;position:relative}
+    .month .m{left:-28px;top:8px}
+    .contact-grid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;height:auto}
+    .shot:first-child{grid-column:1/3;grid-row:auto}
+    .shot{aspect-ratio:4/3}
+  }
+  @media (max-width:560px){
+    .nav a{padding:8px 9px;font-size:.95rem}
+    .brand{display:none}
+    .gallery{grid-template-columns:1fr}
+    .shot:first-child{grid-column:auto}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+    .js .rv{opacity:1;transform:none}
+  }
 </style>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<header class="hero">
+<header class="top">
   <div class="wrap">
-    <span class="eyebrow">รายงานผลการปฏิบัติงานสหกิจศึกษา</span>
-    <h1>นายชลศักดิ์ ทำนา</h1>
-    <p class="lead">นักศึกษาสหกิจศึกษา แผนก IT · Nittan (Thailand) Co., Ltd.</p>
-    <div class="facts">
-      <div class="fact"><b>รหัสนักศึกษา</b><span>66543206073-9</span></div>
-      <div class="fact"><b>สาขา</b><span>วิศวกรรมคอมพิวเตอร์</span></div>
-      <div class="fact"><b>มหาวิทยาลัย</b><span>มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา เชียงใหม่</span></div>
-      <div class="fact"><b>ระยะเวลาฝึก</b><span>2 พ.ย. 2569 – 26 ก.พ. 2570</span></div>
-    </div>
+    <a class="brand" href="#top">ชลศักดิ์ <span>·</span> สหกิจศึกษา</a>
+    <nav class="nav" aria-label="เมนูหลัก">
+      <a href="#work">ผลงาน</a>
+      <a href="#tasks">งาน</a>
+      <a href="#plan">แผนการฝึก</a>
+      <a href="#company">สถานประกอบการ</a>
+      <a href="#contact">ติดต่อ</a>
+    </nav>
   </div>
 </header>
 
-<nav class="tabs">
-  <div class="wrap">
-    <a href="#work">งานที่ได้รับมอบหมาย</a>
-    <a href="#gallery">ภาพการปฏิบัติงาน</a>
-    <a href="#company">สถานประกอบการ</a>
-    <a href="#contact">ติดต่อ</a>
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="term rv">รายงานผลการปฏิบัติงานสหกิจศึกษา · ภาคเรียนที่ 2/2569</p>
+        <h1 class="rv" style="--i:1">นายชลศักดิ์ ทำนา</h1>
+        <p class="sub rv" style="--i:2">นักศึกษาสหกิจศึกษา แผนก IT บริษัท Nittan (Thailand) Co., Ltd.</p>
+        <dl class="facts rv" style="--i:3">
+          <dt>รหัสนักศึกษา</dt><dd>66543206073-9</dd>
+          <dt>สาขา</dt><dd>วิศวกรรมคอมพิวเตอร์</dd>
+          <dt>มหาวิทยาลัย</dt><dd>มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา เชียงใหม่</dd>
+          <dt>ระยะเวลาฝึก</dt><dd>2 พ.ย. 2569 – 26 ก.พ. 2570</dd>
+        </dl>
+        <div class="cta rv" style="--i:4">
+          <a class="btn red" href="#work">ดูผลงาน</a>
+          <a class="btn ghost" href="#plan">แผนการฝึก</a>
+        </div>
+      </div>
+      <div class="hero-pic rv" style="--i:2">
+        <div class="frame"><img id="heroImg" src="images/work-01.jpg" alt="ติดตั้งจอแสดงผลที่ไลน์ผลิต"></div>
+        <span class="tag">แผนก IT · Nittan (Thailand)</span>
+      </div>
+    </div>
   </div>
-</nav>
 
-<main>
+  <div class="live" aria-live="polite">
+    <div class="wrap">
+      <div class="big"><span id="dayNum">0</span><small id="dayUnit">/ 117 วัน</small></div>
+      <div class="track" role="progressbar" aria-label="ความคืบหน้าการฝึกงาน" aria-valuemin="0" aria-valuemax="100" id="track"><i></i></div>
+      <div class="note" id="liveNote">กำลังคำนวณ…</div>
+    </div>
+  </div>
+
   <section id="work">
     <div class="wrap">
-      <div class="bar"></div>
-      <h2>งานที่ได้รับมอบหมาย</h2>
-      <p class="sub">ลักษณะงานหลักระหว่างฝึกปฏิบัติงานที่แผนก IT</p>
-      <div class="tasks">
-        <div class="task"><span class="num">01</span><h3>ติดตั้งและดูแลจอแสดงผล</h3><p>ติดตั้ง ปรับตั้ง และดูแลจอแสดงผลที่ใช้งานในไลน์ผลิต</p></div>
-        <div class="task"><span class="num">02</span><h3>ติดตั้ง/ย้ายคอมพิวเตอร์</h3><p>ติดตั้งและย้ายเครื่องคอมพิวเตอร์และอุปกรณ์ต่อพ่วงให้ผู้ใช้งาน</p></div>
-        <div class="task"><span class="num">03</span><h3>ซ่อมบำรุงฮาร์ดแวร์</h3><p>ตรวจเช็กและเปลี่ยนชิ้นส่วนฮาร์ดแวร์ เช่น การ์ดจอ</p></div>
-        <div class="task"><span class="num">04</span><h3>สนับสนุนผู้ใช้งาน</h3><p>ให้บริการ IT Support แก้ปัญหาการใช้งานให้พนักงาน</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <div class="wrap">
-      <div class="bar"></div>
-      <h2>ภาพการปฏิบัติงาน</h2>
-      <p class="sub">กดที่รูปเพื่อดูภาพขนาดใหญ่</p>
-      <div class="gallery" id="gallery-grid"></div>
-    </div>
-  </section>
-
-  <section id="company">
-    <div class="wrap">
-      <div class="bar"></div>
-      <h2>สถานประกอบการ</h2>
-      <p class="sub">ข้อมูลสถานที่ฝึกปฏิบัติงาน</p>
-      <div class="info">
-        <div class="card">
-          <dl>
-            <dt>บริษัท</dt><dd>Nittan (Thailand) Co., Ltd.</dd>
-            <dt>แผนก</dt><dd>IT</dd>
-            <dt>ระยะเวลา</dt><dd>2 พ.ย. 2569 – 26 ก.พ. 2570</dd>
-          </dl>
+      <div class="head">
+        <div>
+          <h2 class="rv">ผลงานและภาพบรรยากาศ</h2><span class="bar rv"></span>
+          <p class="lead rv" style="--i:1">ภาพระหว่างปฏิบัติงานจริงที่แผนก IT กดที่รูปเพื่อดูภาพขนาดใหญ่</p>
         </div>
       </div>
+      <div class="gallery" id="gallery"></div>
     </div>
   </section>
 
-  <section id="contact" style="padding-top:0">
+  <section id="tasks" style="padding-top:0">
+    <div class="wrap tasks-wrap">
+      <div class="tasks-aside">
+        <h2 class="rv">ลักษณะงาน<wbr>ที่ได้รับ<wbr>มอบหมาย</h2><span class="bar rv"></span>
+        <p class="lead rv" style="--i:1">งานหลักที่ได้รับผิดชอบระหว่างฝึกปฏิบัติงานกับทีม IT</p>
+      </div>
+      <ol class="tasks" id="tasksList"></ol>
+    </div>
+  </section>
+
+  <section id="plan" class="plan">
     <div class="wrap">
-      <div class="bar"></div>
-      <h2>ติดต่อ</h2>
-      <p class="sub">ขอบคุณสำหรับการนิเทศและคำแนะนำ</p>
-      <div class="info">
-        <div class="card">
-          <dl>
-            <dt>อีเมล</dt><dd><a href="mailto:chonlasakthamna@gmail.com">chonlasakthamna@gmail.com</a></dd>
-            <dt>GitHub</dt><dd><a href="https://github.com/Chonlasak-Thamna" target="_blank" rel="noopener">github.com/Chonlasak-Thamna</a></dd>
-            <dt>โทรศัพท์</dt><dd><a href="tel:+66963099234">+66 96 309 9234</a></dd>
-          </dl>
+      <div class="head">
+        <div>
+          <h2 class="rv">แผนการฝึกงาน</h2><span class="bar rv"></span>
+          <p class="lead rv" style="--i:1">ภาพรวม 4 เดือนของการฝึก จุดสีแดงคือวันนี้</p>
         </div>
       </div>
+      <div class="timeline" id="timeline">
+        <div class="rail"><i id="railFill"></i></div>
+        <div class="now" id="nowMark"><span id="nowLabel">วันนี้</span><div class="dot"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap skills-wrap">
+      <div>
+        <h2 class="rv">สิ่งที่ได้เรียนรู้ / ทักษะที่ได้รับ</h2><span class="bar rv"></span>
+        <p class="lead rv" style="--i:1">ทักษะหรือความรู้ที่ได้รับจากการปฏิบัติงานจริง</p>
+        <ul class="skills" id="skillsList" style="margin-top:28px"></ul>
+      </div>
+      <div class="summary rv" style="--i:2">
+        <h3>สรุปประสบการณ์</h3>
+        <p id="summaryText"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="company" class="company">
+    <div class="wrap co-grid">
+      <div class="co-info">
+        <h2 class="rv">ข้อมูลสถานประกอบการ</h2><span class="bar rv"></span>
+        <dl class="rv" style="--i:1">
+          <div><dt>ชื่อบริษัท</dt><dd>Nittan (Thailand) Co., Ltd.</dd></div>
+          <div><dt>ที่ตั้ง</dt><dd>เลขที่ 700/44 หมู่ที่ 6 ถนนบางนา-ตราด ตำบลดอนหัวฬ่อ อำเภอเมืองชลบุรี จังหวัดชลบุรี 20000</dd></div>
+          <div><dt>เบอร์โทรศัพท์</dt><dd><a href="tel:038743486">0-3874-3486-9</a></dd></div>
+          <div><dt>แผนกที่ฝึก</dt><dd>IT</dd></div>
+        </dl>
+        <div class="cta rv" style="--i:2"><a class="btn red" href="https://www.google.com/maps/search/?api=1&query=Nittan+Thailand+700%2F44+Bangna-Trad+Chonburi" target="_blank" rel="noopener">เปิดแผนที่ Google Maps</a></div>
+      </div>
+      <div class="co-media rv" style="--i:2">
+        <figure class="co-photo" id="coPhoto" style="margin:0"><img src="images/company.jpg" alt="อาคารบริษัท Nittan (Thailand)" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+        <iframe class="map" title="แผนที่ที่ตั้งบริษัท Nittan (Thailand)" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Nittan%20Thailand%20Bangna-Trad%20Chonburi&z=14&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 class="rv">ติดต่อ</h2><span class="bar rv"></span>
+      <div class="contact-grid">
+        <a class="ch rv" style="--i:1" href="mailto:chonlasakthamna@gmail.com"><b>อีเมล</b><span>chonlasakthamna@gmail.com</span></a>
+        <a class="ch rv" style="--i:2" href="https://github.com/Chonlasak-Thamna" target="_blank" rel="noopener"><b>GitHub</b><span>github.com/Chonlasak-Thamna</span></a>
+        <a class="ch rv" style="--i:3" href="tel:+66963099234"><b>โทรศัพท์</b><span>+66 96 309 9234</span></a>
+      </div>
+      <p class="thanks rv">ขอบคุณสำหรับการนิเทศและคำแนะนำ</p>
     </div>
   </section>
 </main>
 
-<footer>© 2569 ชลศักดิ์ ทำนา · มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา เชียงใหม่</footer>
+<footer>
+  <div class="wrap"><span><strong>นายชลศักดิ์ ทำนา</strong> · วิศวกรรมคอมพิวเตอร์ มทร.ล้านนา เชียงใหม่</span><span>สหกิจศึกษา ภาคเรียนที่ 2/2569</span></div>
+</footer>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <button type="button" aria-label="ปิด" id="lb-close">&times;</button>
-  <div><img id="lb-img" alt=""><p id="lb-cap"></p></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="ภาพขนาดใหญ่">
+  <button class="x" type="button" aria-label="ปิด">×</button>
+  <button class="prev" type="button" aria-label="ภาพก่อนหน้า">‹</button>
+  <button class="next" type="button" aria-label="ภาพถัดไป">›</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
 </div>
 
 <script>
-  // เพิ่มรูปใหม่: ใส่ไฟล์ในโฟลเดอร์ images/ แล้วเพิ่มบรรทัดในรายการนี้
-  const photos = [
-    { src: "images/work-01.jpg", title: "ติดตั้งจอแสดงผลที่ไลน์ผลิต", note: "แผนก IT · ไลน์ผลิต" },
-    { src: "images/work-02.jpg", title: "ติดตั้งเครื่องคอมพิวเตอร์", note: "แผนก IT · สำนักงาน" },
-  ];
+/* ================= แก้ข้อมูลตรงนี้ =================
+   ข้อความที่ใส่ todo: true จะแสดงเป็น "รอเพิ่มรายละเอียด"
+   แก้ข้อความแล้วลบ todo: true ออกได้เลย                */
+const DATA = {
+  start: "2026-11-02", end: "2027-02-26",
+  photos: [
+    { src: "images/work-01.jpg", title: "ติดตั้งจอแสดงผลที่ไลน์ผลิต" },
+    { src: "images/work-02.jpg", title: "ติดตั้งเครื่องคอมพิวเตอร์" },
+    { src: "images/work-01.jpg", title: "ปฏิบัติงานในโรงงาน" },
+  ],
+  tasks: [
+    { title: "Project", desc: "รายละเอียดโปรเจกต์", todo: true },
+    { title: "สนับสนุนผู้ใช้งาน", desc: "ให้บริการ IT Support แก้ปัญหาการใช้งานให้พนักงาน" },
+    { title: "งานที่ได้รับมอบหมาย", desc: "รายละเอียดงาน", todo: true },
+  ],
+  plan: [
+    { month: "พฤศจิกายน 2569", range: "2–30 พ.ย.", items: [], todo: true },
+    { month: "ธันวาคม 2569",   range: "1–31 ธ.ค.", items: [], todo: true },
+    { month: "มกราคม 2570",    range: "1–31 ม.ค.", items: [], todo: true },
+    { month: "กุมภาพันธ์ 2570", range: "1–26 ก.พ.", items: [], todo: true },
+  ],
+  skills: [
+    { text: "ทักษะหรือความรู้ที่ได้รับ 1", todo: true },
+    { text: "ทักษะหรือความรู้ที่ได้รับ 2", todo: true },
+    { text: "ทักษะหรือความรู้ที่ได้รับ 3", todo: true },
+  ],
+  summary: { text: "เขียนสิ่งที่ได้เรียนรู้เพิ่มเติม", todo: true },
+};
+/* ================================================ */
 
-  const grid = document.getElementById("gallery-grid");
-  const lb = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lb-img");
-  const lbCap = document.getElementById("lb-cap");
+document.documentElement.classList.add("js");
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const TODO = '<span class="todo-chip">รอเพิ่มรายละเอียด</span>';
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  photos.forEach(p => {
-    const fig = document.createElement("figure");
-    fig.className = "shot";
-    fig.innerHTML = `<img src="${p.src}" alt="${p.title}" loading="lazy"><figcaption><b>${p.title}</b><small>${p.note}</small></figcaption>`;
-    fig.addEventListener("click", () => {
-      lbImg.src = p.src; lbImg.alt = p.title; lbCap.textContent = p.title;
-      lb.classList.add("open");
-    });
-    grid.appendChild(fig);
-  });
+/* gallery + lightbox */
+const g = $("#gallery");
+DATA.photos.forEach((p, i) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "shot rv"; b.style.setProperty("--i", i);
+  b.setAttribute("aria-label", "ดูภาพ: " + p.title);
+  b.innerHTML = `<img src="${esc(p.src)}" alt="${esc(p.title)}" loading="lazy"><span class="cap">${esc(p.title)}</span>`;
+  b.onclick = () => openLb(i);
+  g.appendChild(b);
+});
+const lb = $("#lb"), lbImg = lb.querySelector("img"), lbCap = lb.querySelector("figcaption");
+let cur = 0, lastFocus;
+function show(i){ cur = (i + DATA.photos.length) % DATA.photos.length; const p = DATA.photos[cur]; lbImg.src = p.src; lbImg.alt = p.title; lbCap.textContent = `${p.title} (${cur+1}/${DATA.photos.length})`; }
+function openLb(i){ lastFocus = document.activeElement; show(i); lb.classList.add("open"); lb.querySelector(".x").focus(); }
+function closeLb(){ lb.classList.remove("open"); lastFocus && lastFocus.focus(); }
+lb.querySelector(".x").onclick = closeLb;
+lb.querySelector(".prev").onclick = () => show(cur - 1);
+lb.querySelector(".next").onclick = () => show(cur + 1);
+lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLb();
+  if (e.key === "ArrowLeft") show(cur - 1);
+  if (e.key === "ArrowRight") show(cur + 1);
+});
 
-  const close = () => lb.classList.remove("open");
-  document.getElementById("lb-close").addEventListener("click", close);
-  lb.addEventListener("click", e => { if (e.target === lb) close(); });
-  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+/* tasks */
+$("#tasksList").innerHTML = DATA.tasks.map((t, i) => `
+  <li class="task rv" style="--i:${i}">
+    <span class="n" aria-hidden="true">${String(i+1).padStart(2,"0")}</span>
+    <div><h3>${esc(t.title)}</h3>${t.todo ? TODO : `<p>${esc(t.desc)}</p>`}</div>
+  </li>`).join("");
+
+/* skills + summary */
+$("#skillsList").innerHTML = DATA.skills.map((s, i) => `
+  <li class="skill rv" style="--i:${i+2}"><span class="c" aria-hidden="true">${i+1}</span>
+  ${s.todo ? `<span class="todo">${esc(s.text)}</span>` : `<span>${esc(s.text)}</span>`}</li>`).join("");
+$("#summaryText").innerHTML = DATA.summary.todo ? `<span style="opacity:.75">${esc(DATA.summary.text)}</span><br>${TODO.replace('todo-chip"','todo-chip" style="background:rgba(255,255,255,.12);color:#c9d5ea"')}` : esc(DATA.summary.text);
+
+/* dates */
+const DAY = 864e5;
+const start = new Date(DATA.start + "T00:00:00+07:00"), end = new Date(DATA.end + "T23:59:59+07:00");
+const total = Math.round((end - start) / DAY);
+const now = new Date();
+const done = Math.max(0, Math.min(total, Math.floor((now - start) / DAY) + 1));
+const ratio = done / total;
+
+/* plan timeline */
+const tl = $("#timeline");
+const monthStarts = ["2026-11-02","2026-12-01","2027-01-01","2027-02-01","2027-02-27"].map(d => new Date(d+"T00:00:00+07:00"));
+DATA.plan.forEach((m, i) => {
+  const el = document.createElement("div");
+  const state = now >= monthStarts[i+1] ? "past" : now >= monthStarts[i] ? "cur" : "";
+  el.className = `month rv ${state}`; el.style.setProperty("--i", i);
+  el.innerHTML = `<span class="m" aria-hidden="true"></span><h3>${esc(m.month)}</h3><p class="d">${esc(m.range)}${state==="cur"?" · เดือนปัจจุบัน":""}</p>` +
+    (m.todo || !m.items.length ? TODO : `<ul>${m.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`);
+  tl.appendChild(el);
+});
+
+/* live strip */
+const fmt = d => d.toLocaleDateString("th-TH", { day:"numeric", month:"short", year:"numeric" });
+const note = $("#liveNote");
+if (now < start) {
+  const left = Math.ceil((start - now) / DAY);
+  $("#dayUnit").textContent = "วันก่อนเริ่มฝึก"; $("#dayNum").dataset.to = left;
+  note.innerHTML = `เริ่มฝึก <b>${fmt(start)}</b>`;
+} else if (now > end) {
+  $("#dayNum").dataset.to = total; note.innerHTML = `<b>ฝึกงานครบแล้ว</b> ${total} วัน`;
+} else {
+  $("#dayNum").dataset.to = done;
+  const week = Math.ceil(done / 7), weeks = Math.ceil(total / 7);
+  note.innerHTML = `สัปดาห์ที่ <b>${week}</b> จาก ${weeks} · เหลืออีก <b>${total - done}</b> วัน`;
+}
+const track = $("#track");
+track.setAttribute("aria-valuenow", Math.round(ratio * 100));
+$("#nowLabel").textContent = "วันนี้ " + now.toLocaleDateString("th-TH", { day:"numeric", month:"short" });
+
+function countUp(el){
+  const to = +el.dataset.to; if (reduce) { el.textContent = to; return; }
+  const t0 = performance.now(), dur = 1400;
+  (function f(t){ const k = Math.min(1, (t - t0) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(f); })(t0);
+}
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in"); io.unobserve(e.target);
+}), { threshold: .15, rootMargin: "0px 0px -6% 0px" });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+/* one-shot triggers */
+const once = (el, fn) => { const o = new IntersectionObserver(es => { if (es[0].isIntersecting) { fn(); o.disconnect(); } }, { threshold: .4 }); o.observe(el); };
+once(track, () => { track.style.setProperty("--p", ratio); countUp($("#dayNum")); });
+const mobile = () => matchMedia("(max-width:900px)").matches;
+const placeNow = () => {
+  const mk = $("#nowMark");
+  if (now < start || now > end) { mk.style.display = "none"; return; }
+  if (mobile()) mk.style.top = (ratio * 100) + "%"; else { mk.style.top = ""; mk.style.left = (ratio * 100) + "%"; }
+};
+$("#nowMark").style.left = "0%";
+once(tl, () => { $("#railFill").style.transform = mobile() ? `scaleY(${ratio})` : `scaleX(${ratio})`; placeNow(); });
+addEventListener("resize", () => { if ($("#railFill").style.transform) { $("#railFill").style.transform = mobile() ? `scaleY(${ratio})` : `scaleX(${ratio})`; placeNow(); } });
+
+/* scroll progress, hero parallax, active nav */
+const bar = $("#progress"), hero = $("#heroImg");
+const links = [...document.querySelectorAll(".nav a")];
+const secs = links.map(a => document.querySelector(a.getAttribute("href")));
+let ticking = false;
+function onScroll(){
+  const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
+  if (!reduce && y < innerHeight * 1.2) hero.style.transform = `translateY(${-y * 0.08}px)`;
+  let on = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .35) on = i; });
+  links.forEach((a, i) => a.classList.toggle("on", i === on));
+  ticking = false;
+}
+addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+onScroll();
 </script>
 </body>
 </html>
