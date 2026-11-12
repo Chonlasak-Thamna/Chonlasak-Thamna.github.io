@@ -42,9 +42,11 @@
 
   /* hero */
   .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-  .hero::before{content:"";position:absolute;left:0;top:0;width:180px;height:10px;background:var(--red)}
-  .hero::after{content:"";position:absolute;right:0;bottom:0;width:38%;height:10px;background:var(--red)}
-  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center;padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(56px,8vw,104px)}
+  .hero::before{content:"";position:absolute;left:0;top:0;width:180px;height:10px;background:var(--red);z-index:1}
+  .hero::after{content:"";position:absolute;right:0;bottom:0;width:38%;height:10px;background:var(--red);z-index:1}
+  .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:0% 60%;transform:scaleX(-1);z-index:0}
+  .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,34,80,.94) 0%,rgba(10,34,80,.82) 42%,rgba(10,34,80,.28) 100%);z-index:0}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center;min-height:min(86vh,760px);padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(56px,8vw,104px)}
   .term{font-weight:600;color:#ffd5db;font-size:1.05rem}
   .hero h1{font-size:clamp(2.6rem,6.6vw,5.4rem);font-weight:700;margin-top:10px;letter-spacing:-.025em;line-height:1.02}
   .hero .sub{font-size:clamp(1.05rem,1.6vw,1.25rem);color:#d5def0;margin:18px 0 0;max-width:34ch}
@@ -169,6 +171,9 @@
 
   @media (max-width:900px){
     .hero .wrap,.tasks-wrap,.skills-wrap,.co-grid{grid-template-columns:1fr}
+    .hero .wrap{min-height:0;padding-bottom:230px;align-items:start}
+    .hero-bg{object-position:12% 100%}
+    .hero-shade{background:linear-gradient(180deg,rgba(10,34,80,.95) 0%,rgba(10,34,80,.86) 58%,rgba(10,34,80,.2) 100%)}
     .tasks-aside{position:static}
     .live .wrap{grid-template-columns:1fr;gap:14px}
     .live .note{text-align:left}
@@ -215,6 +220,10 @@
 
 <main id="top">
   <div class="hero">
+    <video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="metadata" poster="images/robot-arm-poster.jpg" aria-hidden="true" tabindex="-1">
+      <source src="images/robot-arm.mp4" type="video/mp4">
+    </video>
+    <div class="hero-shade" aria-hidden="true"></div>
     <div class="wrap">
       <div>
         <p class="term rv">รายงานผลการปฏิบัติงานสหกิจศึกษา · ภาคเรียนที่ 2/2569</p>
@@ -230,10 +239,6 @@
           <a class="btn red" href="#work">ดูผลงาน</a>
           <a class="btn ghost" href="#plan">แผนการฝึก</a>
         </div>
-      </div>
-      <div class="hero-pic rv" style="--i:2">
-        <div class="frame"><img id="heroImg" src="images/work-01.jpg" alt="ติดตั้งจอแสดงผลที่ไลน์ผลิต"></div>
-        <span class="tag">แผนก IT · Nittan (Thailand)</span>
       </div>
     </div>
   </div>
@@ -480,6 +485,9 @@ $("#nowMark").style.left = "0%";
 once(tl, () => { $("#railFill").style.transform = mobile() ? `scaleY(${ratio})` : `scaleX(${ratio})`; placeNow(); });
 addEventListener("resize", () => { if ($("#railFill").style.transform) { $("#railFill").style.transform = mobile() ? `scaleY(${ratio})` : `scaleX(${ratio})`; placeNow(); } });
 
+/* พื้นหลังวิดีโอแขนกล: หยุดเล่นถ้าผู้ชมตั้งค่าลดภาพเคลื่อนไหว */
+if (reduce) { const hv = $("#heroBg"); hv.removeAttribute("autoplay"); hv.pause(); }
+
 /* scroll progress, hero parallax, active nav */
 const bar = $("#progress"), hero = $("#heroImg");
 const links = [...document.querySelectorAll(".nav a")];
@@ -488,7 +496,7 @@ let ticking = false;
 function onScroll(){
   const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
   bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
-  if (!reduce && y < innerHeight * 1.2) hero.style.transform = `translateY(${-y * 0.08}px)`;
+  if (hero && !reduce && y < innerHeight * 1.2) hero.style.transform = `translateY(${-y * 0.08}px)`;
   let on = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .35) on = i; });
   links.forEach((a, i) => a.classList.toggle("on", i === on));
   ticking = false;
